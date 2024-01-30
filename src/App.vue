@@ -8,16 +8,15 @@
             />
             <div class="btn">
                 <ul>
-                    <li
-                        :class="{ active: index == toolsIndex }"
-                        v-for="(item, index) in tools"
-                        @click="toolsClick(index)"
-                        :key="item.id"
-                    >
-                        <a :href="item.link">
-                          <img src="./assets/人.svg" alt="">
-                        </a>
-                    </li>
+                    <router-link to="/home">
+                        <img src="@/assets/home.svg" alt="" />
+                    </router-link>
+                    <router-link to="/showkey">
+                        <img src="@/assets/id.svg" alt="" />
+                    </router-link>
+                    <router-link to="/showname">
+                        <img src="@/assets/ren.svg" alt="" />
+                    </router-link>
                 </ul>
                 <h2>TGBOT数据大盘</h2>
             </div>
@@ -33,11 +32,16 @@ export default {
         return {
             toolsIndex: 1,
             tools: [
-                { id: 0, title: "数据大盘" ,link:'#/home'},
-                { id: 1, title: "查看所有id",link:'#/showkey'},
-                { id: 2, title: "查看所有名字",link:'#/showname',path:'./assets/人.svg'},
-                { id: 3, title: "名字來找消息",link:'#/searchMessges'},
-                { id: 4, title: "消息溯源",link:'#/suyuan' },
+                { id: 0, title: "数据大盘", link: "#/home" },
+                { id: 1, title: "查看所有id", link: "#/showkey" },
+                {
+                    id: 2,
+                    title: "查看所有名字",
+                    link: "#/showname",
+                    path: "./assets/人.svg",
+                },
+                { id: 3, title: "名字來找消息", link: "#/searchMessges" },
+                { id: 4, title: "消息溯源", link: "#/suyuan" },
             ],
             key: [],
             name: [],
@@ -109,6 +113,21 @@ body {
     width: 200px;
     margin: 0 auto;
 }
+a {
+    float: left;
+    list-style: none;
+    width: 69px;
+    height: 54px;
+    outline: none;
+    background: rgba(216, 217, 222, 1);
+    margin-left: 15px;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 85px;
+}
+img {
+    width: 60%;
+}
 li {
     float: left;
     list-style: none;
@@ -119,9 +138,7 @@ li {
     margin-left: 15px;
     border-radius: 12px;
 }
-img{
-  width: 80%;
-  display: flex;
-  
+.router-link-active{
+    background-color: rgb(163, 163, 166);
 }
 </style>
