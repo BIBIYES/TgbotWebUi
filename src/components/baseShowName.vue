@@ -22,7 +22,7 @@ export default {
         };
     },
     async created() {
-        const name = await axios.get("http://192.168.123.3/getname");
+        const name = await axios.get("http://192.168.123.3:3001/getname");
         // 2. 更新到 list 中，用于页面渲染 v-for
         this.name = name.data;
     },

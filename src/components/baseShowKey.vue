@@ -2,12 +2,16 @@
     <div id="contentArea">
         <div class="leftBox">
             <ul>
-                <li v-for="(item, index) in leftItems" :key="index">{{ item }}</li>
+                <li v-for="(item, index) in leftItems" :key="index">
+                    {{ item }}
+                </li>
             </ul>
         </div>
         <div class="right">
             <ul>
-                <li v-for="(item, index) in rightItems" :key="index">{{ item }}</li>
+                <li v-for="(item, index) in rightItems" :key="index">
+                    {{ item }}
+                </li>
             </ul>
         </div>
     </div>
@@ -23,8 +27,10 @@ export default {
     },
     async created() {
         try {
-            // 1. 发送请求获取数据
-            const response = await axios.get("http://192.168.123.3/getkey");
+            // 1. 发送请求获取数据，将端口号改为 3001
+            const response = await axios.get(
+                "http://192.168.123.3:3001/getkey"
+            );
             // 2. 更新到 key 中，用于页面渲染 v-for
             this.key = response.data;
             console.log(this.key);
@@ -32,6 +38,7 @@ export default {
             console.error("Error fetching key data:", error);
         }
     },
+
     computed: {
         leftItems() {
             return this.key.filter((item, index) => index % 2 === 0);
