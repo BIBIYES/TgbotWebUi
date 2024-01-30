@@ -18,26 +18,20 @@ import axios from "axios";
 export default {
     data() {
         return {
-            key: [],
+            name: [],
         };
     },
     async created() {
-        try {
-            // 1. 发送请求获取数据
-            const response = await axios.get("http://192.168.123.3/getkey");
-            // 2. 更新到 key 中，用于页面渲染 v-for
-            this.key = response.data;
-            console.log(this.key);
-        } catch (error) {
-            console.error("Error fetching key data:", error);
-        }
+        const name = await axios.get("http://192.168.123.3/getname");
+        // 2. 更新到 list 中，用于页面渲染 v-for
+        this.name = name.data;
     },
     computed: {
         leftItems() {
-            return this.key.filter((item, index) => index % 2 === 0);
+            return this.name.filter((item, index) => index % 2 === 0);
         },
         rightItems() {
-            return this.key.filter((item, index) => index % 2 !== 0);
+            return this.name.filter((item, index) => index % 2 !== 0);
         },
     },
 };

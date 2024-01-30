@@ -14,7 +14,9 @@
                         @click="toolsClick(index)"
                         :key="item.id"
                     >
-                        {{ item.title }}
+                        <a :href="item.link">
+                          <img src="./assets/人.svg" alt="">
+                        </a>
                     </li>
                 </ul>
                 <h2>TGBOT数据大盘</h2>
@@ -31,11 +33,11 @@ export default {
         return {
             toolsIndex: 1,
             tools: [
-                { id: 0, title: "数据大盘" },
-                { id: 1, title: "查看所有id" },
-                { id: 2, title: "查看所有名字" },
-                { id: 3, title: "名字來找消息" },
-                { id: 4, title: "消息溯源" },
+                { id: 0, title: "数据大盘" ,link:'#/home'},
+                { id: 1, title: "查看所有id",link:'#/showkey'},
+                { id: 2, title: "查看所有名字",link:'#/showname',path:'./assets/人.svg'},
+                { id: 3, title: "名字來找消息",link:'#/searchMessges'},
+                { id: 4, title: "消息溯源",link:'#/suyuan' },
             ],
             key: [],
             name: [],
@@ -116,5 +118,10 @@ li {
     background: rgba(216, 217, 222, 1);
     margin-left: 15px;
     border-radius: 12px;
+}
+img{
+  width: 80%;
+  display: flex;
+  
 }
 </style>
