@@ -23,6 +23,9 @@
                     <router-link to="/searchuser">
                         <img src="@/assets/searchUser.svg" title="通过消息来查找用户名" style="width:60%"/>
                     </router-link>
+                    <router-link to="/about">
+                        <img src="@/assets/about.svg" title="关于本webui" style="width:60%"/>
+                    </router-link>
                 </ul>
                 <h2>TGBOT数据大盘</h2>
             </div>

@@ -5,6 +5,7 @@ import showname from '../components/baseShowName'
 import home from '../components/baseHome'
 import searchmessega from '../components/baseSearchMessega'
 import searchuser from '../components/baseSearchUser'
+import viewsAbout from '../views/viewsAbout'
 Vue.use(VueRouter)
 const router = new VueRouter({
     routes: [
@@ -19,9 +20,14 @@ const router = new VueRouter({
         },
         {
             path: '/searchmessega', component: searchmessega
-        },{
+        },
+        {
             path: '/searchuser', component: searchuser
         },
+        {
+            path: '/about', component: viewsAbout
+        },
+        
     ]
 })
 export default router
