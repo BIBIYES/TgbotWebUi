@@ -4,7 +4,7 @@
             :class="{ showMessageNum: true, loading: isLoading }"
             ref="showMessageNum"
         ></div>
-        <div class="showUserNum">
+        <div class="showUserNum " v-loading='true'>
             <h2>暂时不写echarts</h2>
         </div>
     </div>
@@ -19,7 +19,7 @@ export default {
         };
     },
     mounted() {
-        console.log("加载完毕");
+        console.log("数据加载中");
         var myChart = echarts.init(this.$refs.showMessageNum);
         // 图标数据
         var option = {
@@ -48,7 +48,7 @@ export default {
 
         myChart.setOption(option);
         setTimeout(() => {
-            console.log("图标加载完成");
+            console.log("Echarts渲染完成");
             this.isLoading = false;
         }, 2000);
     },
@@ -75,16 +75,7 @@ export default {
     position: relative;
 }
 /* 加载动画 */
-.loading::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #fff url("../assets/loading.gif") no-repeat center;
-    border-radius: 25px;
-}
+
 
 
 </style>

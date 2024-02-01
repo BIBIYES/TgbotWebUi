@@ -1,5 +1,5 @@
 <template>
-    <div id="contentArea">
+    <div id="contentArea" v-loading='isLoading'>
         <div class="leftBox">
             <ul>
                 <li v-for="(item, index) in leftItems" :key="index">
@@ -23,6 +23,7 @@ export default {
     data() {
         return {
             key: [],
+            isLoading:true
         };
     },
     async created() {
@@ -33,9 +34,10 @@ export default {
             );
             // 2. 更新到 key 中，用于页面渲染 v-for
             this.key = response.data;
-            console.log(this.key);
+            console.log("成功从服务器获取到数据");
+            this.isLoading = false
         } catch (error) {
-            console.error("Error fetching key data:", error);
+            console.error("数据获取失败", error);
         }
     },
 
@@ -53,13 +55,14 @@ export default {
 <style scoped>
 #contentArea {
     width: 1030px;
-    height: 798px;
+    height: 898px;
     background: rgba(194, 195, 199, 1);
     margin: 0 auto;
     margin-top: 12px;
     border-radius: 12px 12px 0px 0px;
     padding: 19px 20px;
     overflow-y: auto;
+    position: relative;
 }
 .leftBox {
     width: 482px;
@@ -68,6 +71,7 @@ export default {
     padding: 0;
     margin-left: 3px;
     float: left;
+    border-radius: 12px;
 }
 .right {
     width: 482px;
@@ -76,6 +80,7 @@ export default {
     padding: 0;
     margin-left: 3px;
     float: right;
+    border-radius: 12px;
 }
 .leftBox li,
 .right li {

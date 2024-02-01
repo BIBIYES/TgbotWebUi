@@ -1,5 +1,5 @@
 <template>
-    <div id="contentArea">
+    <div id="contentArea" v-loading='isLoading'>
         <div class="leftBox">
             <ul>
                 <li v-for="(item, index) in leftItems" :key="index">{{ item }}</li>
@@ -19,12 +19,15 @@ export default {
     data() {
         return {
             name: [],
+            isLoading : true
         };
     },
     async created() {
         const name = await axios.get("http://192.168.123.3:3001/getname");
         // 2. 更新到 list 中，用于页面渲染 v-for
         this.name = name.data;
+        console.log("成功从服务器获取到数据");
+        this.isLoading = false
     },
     computed: {
         leftItems() {
@@ -40,13 +43,14 @@ export default {
 <style scoped>
 #contentArea {
     width: 1030px;
-    height: 798px;
+    height: 898px;
     background: rgba(194, 195, 199, 1);
     margin: 0 auto;
     margin-top: 12px;
     border-radius: 12px 12px 0px 0px;
     padding: 19px 20px;
     overflow-y: auto;
+    position: relative;
 }
 .leftBox {
     width: 482px;
@@ -55,6 +59,7 @@ export default {
     padding: 0;
     margin-left: 3px;
     float: left;
+    border-radius: 12px;
 }
 .right {
     width: 482px;
@@ -63,6 +68,7 @@ export default {
     padding: 0;
     margin-left: 3px;
     float: right;
+    border-radius: 12px;
 }
 .leftBox li,
 .right li {
