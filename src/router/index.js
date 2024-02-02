@@ -9,6 +9,7 @@ import viewsAbout from '../views/viewsAbout'
 Vue.use(VueRouter)
 const router = new VueRouter({
     routes: [
+        { path: '/', redirect: '/home' },
         {
             path: '/showkey', component: showkey
         },
@@ -27,7 +28,7 @@ const router = new VueRouter({
         {
             path: '/about', component: viewsAbout
         },
-        
+
     ]
 })
 export default router
