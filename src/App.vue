@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="topNavBox">
+      
       <img
         src="https://www.emojiall.com/en/header-svg/%F0%9F%90%AD.svg"
         alt=""

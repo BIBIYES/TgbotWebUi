@@ -1,5 +1,6 @@
 <template>
-    <div id="contentArea" v-loading='isLoading'>
+    <div id="contentArea" >
+        <el-skeleton :rows="23" animated v-if="isLoading"/>
         <div class="leftBox">
             <ul>
                 <li v-for="(item, index) in leftItems" :key="index">
@@ -36,6 +37,8 @@ export default {
             this.key = response.data;
             console.log("成功从服务器获取到数据");
             this.isLoading = false
+            
+            
         } catch (error) {
             console.error("数据获取失败", error);
         }

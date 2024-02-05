@@ -34,13 +34,20 @@ export default {
   },
   methods: {
     async sendName() {
+      
       console.log("正在发送请求，请求值是" + this.value);
       const message_data = await axios.get(
         `http://192.168.123.3:3001/sendName?name=${this.value}`
       );
       // 2. 更新到 list 中，用于页面渲染 v-for
       this.message_list = message_data.data.mseege;
+      this.$notify({
+        title: "成功",
+        message: "已从服务端收到消息",
+        type: "success",
+      });
       console.log("获取到数据" + this.message_list);
+      
     },
   },
 };
