@@ -57,7 +57,7 @@ export default {
         }
         .box2{
             float: left;
-            height: 642px;
+            height: 690px;
             width: 80%;
             background-color:#fff;
             margin-top: 60px;
@@ -66,10 +66,10 @@ export default {
         }
         .box2-1{
             float:right;
-            height: 330px;
+            height: 331px;
             width: 65.99%;
             background-color:rgb(234, 234, 234);
-            margin-top: 312px;
+            margin-top: 359px;
             margin-right: 2%;
             border-radius: 12px 12px 0px 0px;
         }
@@ -85,10 +85,11 @@ export default {
             height: 121px;
             width: 32%;
             background-color:rgb(234, 234, 234);
-            margin-top: 215px;
+            margin-top: 222px;
             border-radius: 12px 0px 0px 0px;
         }
         .box2-2 p{
+            margin-top: 5px;
             word-wrap: break-word;
             font-size: 16px;
             font-weight: 700;
@@ -118,7 +119,7 @@ export default {
         .p2{
             float: left;
             margin-top: 250px;
-            margin-left: -152px;
+            margin-left: 15px;
             font-size: 40px;
             font-weight: 900;
             font-family:Arial, Helvetica, sans-serif;
@@ -138,18 +139,18 @@ export default {
         }
         .temp{
             float: left;
-            width: 33%;
-            height: 210px;
+            width: 32%;
+            height: 217px;
             background-color:#fff;
             margin-top: -330px;
-            border-radius: 0px 0px 12px 0px;
+            border-radius: 0px 12px 12px 0px;
         }
         .box3{
             float: left;
-            width: 96%;
+            width: 93%;
             height: 201px;
             background-color:rgb(234, 234, 234);
-            margin-left: 1.5%;
+            margin-left: 3%;
             border-radius: 10px;
         }
         .box3 li{
