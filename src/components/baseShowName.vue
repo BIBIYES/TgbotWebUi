@@ -1,5 +1,6 @@
 <template>
-    <div id="contentArea" v-loading='isLoading'>
+    <div id="contentArea" >
+        <el-skeleton :rows="23" animated v-if="isLoading"/>
         <div class="leftBox">
             <ul>
                 <li v-for="(item, index) in leftItems" :key="index">{{ item }}</li>
