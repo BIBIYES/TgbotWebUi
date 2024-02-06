@@ -31,7 +31,7 @@ export default {
         try {
             // 1. 发送请求获取数据，将端口号改为 3001
             const response = await axios.get(
-                "http://192.168.123.3:3001/getkey"
+                "http://127.0.0.1:3001/getkey"
             );
             // 2. 更新到 key 中，用于页面渲染 v-for
             this.key = response.data;

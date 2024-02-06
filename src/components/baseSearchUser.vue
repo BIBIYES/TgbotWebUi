@@ -36,7 +36,7 @@ export default {
     async sendMessage() {
       console.log("正在请求该消息的发送者");
       const name_data = await axios.get(
-        `http://192.168.123.3:3001/searchid?name=${this.value}`
+        `http://127.0.0.1:3001/searchid?name=${this.value}`
       );
       this.sendNameInfo = name_data.data;
       this.$notify({

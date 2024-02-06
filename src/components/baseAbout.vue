@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <div class="box2">
+            <h1>正在施工中</h1>
                 <div>
                     <p class="p1">history</p>
                     <div class="box2-1"><p>pppp</p></div>

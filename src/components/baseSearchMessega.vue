@@ -37,7 +37,7 @@ export default {
       
       console.log("正在发送请求，请求值是" + this.value);
       const message_data = await axios.get(
-        `http://192.168.123.3:3001/sendName?name=${this.value}`
+        `http://127.0.0.1:3001/sendName?name=${this.value}`
       );
       // 2. 更新到 list 中，用于页面渲染 v-for
       this.message_list = message_data.data.mseege;
